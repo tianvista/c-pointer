@@ -6,16 +6,38 @@
  ************************************************************************/
 
 #include<stdio.h>
+#include<stdlib.h>
 #include<math.h>
 
+#define MAX_NUM   100
+
+int is_prime(int n)
+{
+	int i;
+	int s;
+
+	if(n <= 0)
+	{
+		printf("n < 0, wrong!\n");
+		exit(-1);
+	}
+	s = (int)sqrt(n);
+	for(i = 2; i <= s; i++)
+	{
+		if(n % i == 0)
+			return 0;
+	}
+	return 1;
+}
 int main(void)
 {
 	int a;
-	int sa;
+	int i;
 
-	printf("input an integer:");
-	scanf("%d", &a);
-	printf("the sqrt of a is :%d\n", (int)sqrt(a));
+	for(i = 1; i <= 100; i++)
+		if(is_prime(i) == 1)
+			printf("%d  ", i);
+	printf("\n");
 
 	return 0;
 }
