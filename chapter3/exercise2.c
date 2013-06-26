@@ -9,7 +9,7 @@
 #include<stdlib.h>
 #include<math.h>
 
-#define MAX_NUM   100
+#define MAX_NUM   1000
 
 int is_prime(int n)
 {
@@ -34,7 +34,7 @@ int main(void)
 	int a;
 	int i;
 
-	for(i = 1; i <= 100; i++)
+	for(i = 1; i <= MAX_NUM; i++)
 		if(is_prime(i) == 1)
 			printf("%d  ", i);
 	printf("\n");
